@@ -5,7 +5,6 @@ const GlobalStyle = createGlobalStyle`
   html {
     height: 85%;
   }
-
   body {
     width: 100%;
     min-height: 100%;
@@ -38,18 +37,19 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
   }
 
   button {
     width: 15em;
-    background-color: #F8B266;
+    background-color: #F78887;
     border-radius: 10px;
     border: 1px solid black;
     padding: 10px;
+    color: black;
     font-size: 1em;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Patua One', cursive;
     box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.38);
 
     &:hover {
