@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
 
   html {
-    height: 100%;
+    height: 85%;
   }
 
   body {
@@ -42,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: black;
+    text-align: center;
   }
 
   button {
