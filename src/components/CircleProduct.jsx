@@ -1,8 +1,36 @@
+import axios from 'axios';
 import styled from 'styled-components';
+import useLongPress from '../functions/useLongPress';
 
-const CircleProduct = ( {name} ) => {
+const CircleProduct = ( {name, id} ) => {
+
+  const onLongPress = () => {
+    console.log('Long click')
+    axios
+    .delete(`http://localhost:5000/api/ingredients/${id}`)
+  }
+
+  const onClick = () => {
+    const addProduct = { ingredient_id: id, user_id: 1}
+    axios
+    .post(`http://localhost:5000/api/users/1/lists`, addProduct)
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
+  const defaultOptions = {
+    shouldPreventDefault: true,
+    delay: 1000,
+  };
+
+  const longPressEvent = useLongPress(onLongPress, onClick, defaultOptions);
+
   return (
-    <Circle>
+    <Circle {...longPressEvent}>
       <p>{name}</p>
     </Circle>
   )

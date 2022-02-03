@@ -22,12 +22,12 @@ const Ingredients = () => {
       </Container>
       <Container>
         <Link to="/ingredient-form">
-          <button type="button">Ajouter un produit</button>
+          <button type="button" style={{width: 300}}>Ajouter un produit</button>
         </Link>
       </Container>
       <ProductContainer>
         {productsList.map((product) => (
-          <CircleProduct name={product.name} />
+          <CircleProduct name={product.name} id={product.id} />
         ))}
       </ProductContainer>
     </div>
