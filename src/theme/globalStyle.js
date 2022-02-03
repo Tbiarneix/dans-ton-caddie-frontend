@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    width: 15em;
+    width: 10em;
     background-color: #F78887;
     border-radius: 10px;
     border: 1px solid black;
