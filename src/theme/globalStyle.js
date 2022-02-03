@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     margin: auto;
     padding: 0;
     padding-bottom: 5rem;
-    background: black;
+    background: #0B032F;
     font-family: 'Patua One', cursive;
   }
   h1 {

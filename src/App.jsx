@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <h1>Titre</h1>
+      <h1>Dans ton Caddie</h1>
       <p>Texte</p>
     </div>
   )
