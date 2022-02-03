@@ -27,7 +27,7 @@ const Ingredients = () => {
       </Container>
       <ProductContainer>
         {productsList.map((product) => (
-          <CircleProduct name={product.name} id={product.id} />
+          <CircleProduct name={product.name} id={product.id} key={product.id} />
         ))}
       </ProductContainer>
     </div>

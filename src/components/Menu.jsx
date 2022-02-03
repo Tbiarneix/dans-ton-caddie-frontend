@@ -53,7 +53,7 @@ const Menu = () => {
           </Link>
         </UnactiveNavElement>
       )}
-      {userLink ? (
+      {/* {userLink ? (
         <ActiveNavElement>
           <Link to="/user">
             <img src="ressources/user-white.png" alt="User logo" />
@@ -65,7 +65,7 @@ const Menu = () => {
             <img src="ressources/user-white.png" alt="User logo" />
           </Link>
         </UnactiveNavElement>
-      )}
+      )} */}
     </Nav>
   );
 };
