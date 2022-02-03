@@ -1,45 +1,42 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GlobalStyle from "./theme/globalStyle";
+import Loader from "./components/Loader";
+import ShoppingList from "./components/ShoppingList";
+import Ingredients from "./components/Ingredients";
+import IngredientForm from "./components/IngredientForm";
+import User from "./components/User";
+import NotFound from "./components/NotFound";
+import Menu from "./components/Menu";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
+  }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      <GlobalStyle />
+      {loader ? (
+        <Loader />
+      ) : (
+        <Router>
+          <Routes>
+            <Route path="/" element={<ShoppingList />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/ingredient-form" element={<IngredientForm />} />
+            <Route path="/user" element={<User />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Menu />
+        </Router>
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
