@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Acme&family=Patua+One&display=swap');
-
 
   html {
     height: 85%;
@@ -16,20 +14,19 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     padding-bottom: 5rem;
     background: #0B032F;
-    font-family: 'Patua One', cursive;
   }
   h1 {
-    font-family: 'Acme', sans-serif, bold;
+    font-family: 'Righteous', cursive;
     font-size: 36px;
     text-align: center;
     color: white;
     }
   h2 {
-    font-family: 'Acme', sans-serif, bold;
+    font-family: 'Righteous', cursive;
     font-size: 16px;
   }
   h3 {
-    font-family: 'Acme', sans-serif, bold;
+    font-family: 'Righteous', cursive;
     font-size: 14px;
     margin: 0 1em 1em;
   }

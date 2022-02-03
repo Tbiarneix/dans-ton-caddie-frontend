@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <h1>Dans ton Caddie</h1>
+    <h1>DANS TON <br></br>CADDIE</h1>
   )
 };
 
