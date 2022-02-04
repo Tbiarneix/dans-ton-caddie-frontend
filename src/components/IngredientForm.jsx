@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router';
 import styled from 'styled-components';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import Form from '../theme/formStyle';
 
 const IngredientForm = () => {
   const [formData, setFormData] = useState({
     name : "", type: "", unit:""
   });
+  const [toProductList, setToProductList] = useState(false)
+
+  if (toDashboard === true) {
+    return <Navigate to='/ingredients'/>
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +26,10 @@ const IngredientForm = () => {
     .catch((err) => {
       console.log(err);
     })
+    setToProductList(true)
+    if (toProductList === true) {
+      return <Navigate to='/ingredients'/>
+    }
   }
 
   return (
@@ -67,7 +78,9 @@ const IngredientForm = () => {
         <Link to="/ingredients">
           <button type="button">Retour</button>
         </Link>
-        <button type="submit" onClick={handleSubmit}>Ajouter</button>
+        <Link to="/ingredients">
+          <button type="submit" onClick={handleSubmit}>Ajouter</button>
+        </Link>
       </ButtonContainer>
     </div>
   );
