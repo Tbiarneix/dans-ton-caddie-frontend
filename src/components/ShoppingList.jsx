@@ -5,6 +5,7 @@ import CircleList from "./CircleList";
 
 const ShoppingList = () => {
   const [shoppingList, setShoppingList] = useState([]);
+  const [updateList, setUpdateList] = useState(false);
 
   useEffect(() => {
     axios
@@ -12,14 +13,18 @@ const ShoppingList = () => {
       .then(res => res.data)
       .then(data => setShoppingList(data.payload))
       .catch((err) => console.log(err));
-  }, []);
+  }, [updateList]);
+
+  const handleOnClick = () => {
+    setUpdateList(!updateList)
+  }
 
   return (
     <div>
       <Container>
         <h1>Liste de course</h1>
       </Container>
-      <ProductContainer>
+      <ProductContainer onClick={handleOnClick}>
         {shoppingList.map((product) => (
           <CircleList name={product.ingredient.name} id={product.ingredient.id} key={product.ingredient.id} />
         ))}

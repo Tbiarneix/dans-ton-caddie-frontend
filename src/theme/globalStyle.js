@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     height: 85%;
   }
+
   body {
     width: 100%;
     min-height: 100%;
@@ -14,21 +15,25 @@ const GlobalStyle = createGlobalStyle`
     padding-bottom: 5rem;
     background: #0B032F;
   }
+
   h1 {
     font-family: 'Righteous', cursive;
     font-size: 36px;
     text-align: center;
     color: white;
     }
+
   h2 {
     font-family: 'Righteous', cursive;
     font-size: 16px;
   }
+
   h3 {
     font-family: 'Righteous', cursive;
     font-size: 14px;
     margin: 0 1em 1em;
   }
+  
   p {
     font-family: 'Patua One', cursive;
     font-size: 1.3em;

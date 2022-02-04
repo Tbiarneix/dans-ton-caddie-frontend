@@ -6,6 +6,7 @@ import CircleProduct from "./CircleProduct";
 
 const Ingredients = () => {
   const [productsList, setProductsList] = useState([]);
+  const [updateProductList, setUpdateProductList] = useState(false);
 
   useEffect(() => {
     axios
@@ -13,7 +14,11 @@ const Ingredients = () => {
       .then((res) => res.data)
       .then((data) => setProductsList(data.payload))
       .catch((err) => console.log(err));
-  }, []);
+  }, [updateProductList]);
+
+  const handleOnClick = () => {
+    setUpdateProductList(!updateProductList);
+  }
 
   return (
     <div>
@@ -25,7 +30,7 @@ const Ingredients = () => {
           <button type="button" style={{width: 300}}>Ajouter un produit</button>
         </Link>
       </Container>
-      <ProductContainer>
+      <ProductContainer onClick={handleOnClick}>
         {productsList.map((product) => (
           <CircleProduct name={product.name} id={product.id} key={product.id} />
         ))}
