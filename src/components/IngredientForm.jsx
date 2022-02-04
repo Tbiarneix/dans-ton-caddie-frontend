@@ -12,7 +12,7 @@ const IngredientForm = () => {
   });
   const [toProductList, setToProductList] = useState(false)
 
-  if (toDashboard === true) {
+  if (toProductList === true) {
     return <Navigate to='/ingredients'/>
   }
 
@@ -27,9 +27,6 @@ const IngredientForm = () => {
       console.log(err);
     })
     setToProductList(true)
-    if (toProductList === true) {
-      return <Navigate to='/ingredients'/>
-    }
   }
 
   return (
